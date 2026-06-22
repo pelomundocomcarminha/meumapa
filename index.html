@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mapa dos meus vídeos</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map { height: 80vh; width: 100%; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+  </style>
+</head>
+<body>
+  <h2>Mapa dos meus vídeos</h2>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Centralize no Brasil
+    var map = L.map('map').setView([-14.2350, -51.9253], 4);
+
+    // Mapa base
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Seus pontos
+    var pontos = [
+      {
+        nome: "Feiras e Mercados de Buenos Aires",
+        lat: -34.6037,
+        lng: -58.3816,
+        url: "https://www.youtube.com/watch?v=IOe2mOoNea0"
+      },
+      {
+        nome: "Cristo Redentor, Rio de Janeiro",
+        lat: -22.9519,
+        lng: -43.2105,
+        url: "https://www.youtube.com/watch?v=EXEMPLO2"
+      }
+    ];
+
+    // Adicionando marcadores
+    pontos.forEach(function(ponto) {
+      L.marker([ponto.lat, ponto.lng]).addTo(map)
+        .bindPopup('<a href="' + ponto.url + '" target="_blank">' + ponto.nome + '</a>');
+    });
+  </script>
+</body>
+</html>
