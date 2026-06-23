@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mapa dos meus vídeos</title>
+  <title>Mapa dos Vídeos do Canal</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -11,36 +11,97 @@
   </style>
 </head>
 <body>
-  <h2>Mapa dos meus vídeos</h2>
+  <h2>Mapa dos Vídeos do Canal</h2>
   <div id="map"></div>
-
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script>
-    // Centralize no Brasil
-    var map = L.map('map').setView([-14.2350, -51.9253], 4);
+    var map = L.map('map').setView([-22.5, -44.5], 6);
 
-    // Mapa base
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    // Seus pontos
     var pontos = [
       {
-        nome: "Feiras e Mercados de Buenos Aires",
-        lat: -34.6037,
-        lng: -58.3816,
-        url: "https://www.youtube.com/watch?v=IOe2mOoNea0"
+        nome: "A ATUAL SITUAÇÃO DE SÃO PAULO! #57",
+        lat: -23.5505,
+        lng: -46.6333,
+        url: "LINK_DO_VIDEO_SAO_PAULO"
       },
       {
-        nome: "Cristo Redentor, Rio de Janeiro",
-        lat: -22.9519,
-        lng: -43.2105,
-        url: "https://www.youtube.com/watch?v=EXEMPLO2"
+        nome: "CHEGOU A HORA! ABANDONANDO TUDO PARA MORAR EM UMA KOMBI #58",
+        lat: -22.0056,
+        lng: -47.8977,
+        url: "https://www.youtube.com/watch?v=WT-s8sUhSZo"
+      },
+      {
+        nome: "OFICIALMENTE MORANDO em uma KOMBI. QUAL SERÁ NOSSA ROTA? EP01",
+        lat: -23.2237,
+        lng: -45.9009,
+        url: "LINK_DO_VIDEO_SAO_JOSE_01"
+      },
+      {
+        nome: "As primeiras 48 horas Vivendo em uma Kombi EP02",
+        lat: -23.2237,
+        lng: -45.9009,
+        url: "LINK_DO_VIDEO_SAO_JOSE_02"
+      },
+      {
+        nome: "Do CÉU ao INFERNO em Questão de Minutos: Vivendo em um Motorhome no Litoral de SP EP03",
+        lat: -23.6206,
+        lng: -45.4091,
+        url: "LINK_DO_VIDEO_CARAGUATATUBA_01"
+      },
+      {
+        nome: "Nos surpreendemos MUITO com Caraguatatuba - SP de Motorhome EP04",
+        lat: -23.6206,
+        lng: -45.4091,
+        url: "LINK_DO_VIDEO_CARAGUATATUBA_02"
+      },
+      {
+        nome: "Tivemos um Acidente com o Motorhome A caminho de Paraty EP05",
+        lat: -23.2221,
+        lng: -44.7176,
+        url: "LINK_DO_VIDEO_PARATY_01"
+      },
+      {
+        nome: "Vivendo um PARAÍSO em Paraty de Motorhome!! EP06",
+        lat: -23.2221,
+        lng: -44.7176,
+        url: "https://www.youtube.com/watch?v=tH82XU-uY7k&t=4s"
+      },
+      {
+        nome: "Explorando Angra dos Reis de Motorhome EP07",
+        lat: -23.0067,
+        lng: -44.3188,
+        url: "LINK_DO_VIDEO_ANGRA"
+      },
+      {
+        nome: "Por isso Essa Região É Considerada Uma das Melhores do Brasil EP08",
+        lat: -22.8824,
+        lng: -42.0192,
+        url: "LINK_DO_VIDEO_CABO_FRIO"
+      },
+      {
+        nome: "A Vida Real Morando em uma KOMBI em Arraial do Cabo RJ EP09",
+        lat: -22.9671,
+        lng: -42.0277,
+        url: "https://www.youtube.com/watch?v=wD7lTwm-BPk&t=4s"
+      },
+      {
+        nome: "QUASE CAÍMOS em um GOLPE no RIO DE JANEIRO EP10",
+        lat: -22.9671,
+        lng: -42.0277,
+        url: "LINK_DO_VIDEO_ARRAIAL_01"
+      },
+      {
+        nome: "NUNCA IMAGINEI ENCONTRAR ISSO EM Búzios RJ EP11",
+        lat: -22.7500,
+        lng: -41.8846,
+        url: "LINK_DO_VIDEO_BUZIOS"
       }
     ];
 
-    // Adicionando marcadores
     pontos.forEach(function(ponto) {
       L.marker([ponto.lat, ponto.lng]).addTo(map)
         .bindPopup('<a href="' + ponto.url + '" target="_blank">' + ponto.nome + '</a>');
